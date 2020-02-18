@@ -9,14 +9,15 @@ import { AuthService } from '../auth.service';
 })
 export class RegisterPage implements OnInit {
 
-  constructor(private  authService:  AuthService, private  router:  Router) { }
+  constructor(private  authService: AuthService, private  router: Router) {
+  }
 
   ngOnInit() {
   }
 
   register(form) {
     this.authService.register(form.value).subscribe((res) => {
-      this.router.navigateByUrl('home');
+      this.router.navigateByUrl('login');
     });
   }
 }
